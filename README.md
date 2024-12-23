@@ -78,3 +78,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ![WhatsApp Image 2024-12-23 at 23 53 27_6393b952](https://github.com/user-attachments/assets/3b3b7dbd-e26b-49a8-986f-3d4e7db3a14a)
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### How to run
+1.Navigate to the Project Directory:
+
+bash
+cd jobringer-app
+
+2. Start the React Development Server
+In the terminal, run the following command to start your React app:
+bash
+npm start
