@@ -1,0 +1,543 @@
+:root {
+  --header-height: 3.5rem;
+  --hue: 200;
+  --first-color: hsl(var(--hue), 55%, 55%);
+  --first-color-light: hsl(var(--hue), 55%, 65%);
+  --first-color-alt: hsl(var(--hue), 50%, 50%);
+  --title-color: hsl(var(--hue), 30%, 95%);
+  --text-color: hsl(var(--hue), 20%, 80%);
+  --text-color-light: hsl(var(--hue), 20%, 70%);
+  --body-color: hsl(var(--hue), 40%, 16%);
+  --container-color: hsl(var(--hue), 40%, 20%);
+  --body-font: "Syne", sans-serif;
+  --biggest-font-size: 3rem;
+  --big-font-size: 1.5rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  --z-fixed: 100;
+}
+
+section {
+  scroll-margin-top: var(--header-height); /* Adjust this to match your header's height */
+}
+
+
+html, body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* Ensure vertical scrolling */
+  touch-action: auto; /* Enable scrolling and touch actions */
+}
+
+header.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background-color: var(--container-color);
+  z-index: var(--z-fixed);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+header.header {
+  width: 100%;
+  z-index: var(--z-fixed);
+}
+
+.logo {
+  font-size: var(--big-font-size);
+  font-weight: var(--font-bold);
+  color: var(--first-color);
+}
+
+.subtitle {
+  font-size: 10px; 
+  color: var(--first-color); 
+  padding: 0  1.5rem;
+  font-weight: var(--font-bold);
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: var(--font-semi-bold);
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--first-color-light);
+}
+
+.btn-login, .btn-employer {
+  background-color: var(--first-color);
+  font-size: var(--big-font-size);
+  color: white;
+  margin: 8px 2px;
+  padding: 0px;
+  border-radius: 5px;
+  font-weight: var(--font-bold);
+  transition: background-color 0.3s;
+}
+
+.btn-login:hover, .btn-employer:hover {
+  background-color: var(--first-color-light);
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--first-color);
+  border-radius: 5px;
+}
+
+/* Mobile Navigation (hidden by default) */
+.nav {
+  display: flex;
+}
+
+.nav.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  background-color: var(--container-color);
+  padding: 1rem 0;
+  z-index: var(--z-fixed);
+}
+
+.main-content {
+  margin-top: var(--header-height);
+  height: var(--body-height);
+  overflow-y: auto; /* Ensure the content is scrollable */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.main-content {
+  text-align: center;
+}
+
+section {
+  padding: 20px 40px; /* Adds spacing around each section */
+  margin-bottom: 40px; /* Separates sections from one another */
+}
+
+.search-section h1 {
+  font-size: var(--biggest-font-size);
+  color: var(--title-color);
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.notification-bar {
+  background-color: var(--first-color-alt);
+  color: var(--title-color);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.employers-section, .jobs-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.employer-list {
+  margin-top: 1rem;
+}
+
+.load-more {
+  background-color: var(--first-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.load-more:hover {
+  background-color: var(--first-color-light);
+}
+
+.employer-logos img {
+  width: 80px; /* Ensures all logos have the same width */
+  height: 80px; /* Ensures all logos have the same height */
+  object-fit: contain; /* Scales the logo while maintaining its aspect ratio */
+  margin: 0.5rem;
+  border-radius: 10px; /* Makes logos appear modern with rounded corners */
+  background-color: var(--container-color); /* Adds a uniform background */
+  padding: 10px; /* Adds spacing inside the logo container */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a polished look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.employer-logos img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Enhances shadow on hover */
+}
+
+.jobs-section h3 {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+}
+
+footer.footer {
+  background-color: var(--container-color);
+  color: var(--text-color-light);
+  text-align: center;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+
+  /* Ensure that the body and html allow scrolling on mobile devices */
+html, body {
+  height: 100%;
+  overflow: auto;
+  touch-action: auto;
+}
+
+body {
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Ensure no fixed elements block the view on mobile */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--container-color);
+}
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .search-input {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .employer-logos img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain; /* Scales the logo while maintaining its aspect ratio */
+    margin: 0.5rem;
+    border-radius: 10px; /* Makes logos appear modern with rounded corners */
+    background-color: var(--container-color); /* Adds a uniform background */
+    padding: 10px; /* Adds spacing inside the logo container */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a polished look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+}
+
+/* Responsive Design for Job Section */
+.jobs-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.job-card {
+  background-color: var(--container-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design for Active Employer Section */
+.employers-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.employer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 200px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.employer-card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design for Job Blogs Section */
+.blogs-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.blog-card {
+  background-color: var(--container-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+  text-align: left;
+}
+
+.blog-card h3 {
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design for Pricing Section */
+.pricing-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pricing-card {
+  background-color: var(--container-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+}
+
+.pricing-card h3 {
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design for Login Sections */
+.login-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--container-color);
+  color: var(--text-color);
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-section form {
+  width: 100%;
+}
+
+.login-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--title-color);
+}
+
+.login-section input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+.login-section button {
+  background-color: var(--first-color);
+  color: var(--title-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-section button:hover {
+  background-color: var(--first-color-light);
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+  .jobs-section, .employers-section, .blogs-section, .pricing-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job-card, .employer-card, .blog-card, .pricing-card {
+    max-width: 90%;
+  }
+
+  .login-section {
+    max-width: 90%;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .jobs-section, .employers-section, .blogs-section, .pricing-section {
+    justify-content: space-evenly;
+  }
+}
+
+
+/* Active Employers Section */
+.active-employers {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adds space between employer cards */
+}
+
+.active-employers .card {
+  background-color: #1a2b45;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 22%; /* Ensures uniform card sizes */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Job Blogs Section */
+.job-blogs {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adds space between blog cards */
+}
+
+.job-blogs .card {
+  background-color: #1a2b45;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 45%; /* Ensures equal width for blogs */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Pricing Section */
+.pricing {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adds space between pricing cards */
+}
+
+.pricing .card {
+  background-color: #1a2b45;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 45%; /* Ensures equal width for pricing plans */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Images */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Card Titles */
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+/* Card Text */
+.card p {
+  font-size: 1rem;
+  color: #cfd8e3;
+  margin-bottom: 10px;
+}
